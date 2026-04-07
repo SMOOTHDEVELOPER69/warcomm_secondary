@@ -29,33 +29,29 @@ wss.on("connection", (ws) => {
     })
   );
 
-  // 🔥 Notify others
-  Object.keys(clients).forEach((clientId) => {
-    if (clientId !== id) {
-      clients[clientId].send(
-        JSON.stringify({
-          type: "new-peer",
-          peerId: id,
-        })
-      );
-    }
+  // 🔥 Notify others efficiently
+  const newPeerMessage = JSON.stringify({
+    type: "new-peer",
+    peerId: id,
   });
+
+  for (const clientId in clients) {
+    if (clientId !== id) {
+      clients[clientId].send(newPeerMessage);
+    }
+  }
 
   ws.on("message", (message) => {
     const data = JSON.parse(message);
 
     console.log("📩 Incoming:", data.type, "from", id);
 
-    // 🔥 RELAY TO TARGET
+    // 🔥 RELAY TO TARGET efficiently without spread copying
     if (data.to && clients[data.to]) {
       console.log("➡️ Sending to", data.to);
 
-      clients[data.to].send(
-        JSON.stringify({
-          ...data,
-          from: id,
-        })
-      );
+      data.from = id; // Mutating object is much faster than spreading a large SDP
+      clients[data.to].send(JSON.stringify(data));
     } else {
       console.log("⚠️ Target not found:", data.to);
     }

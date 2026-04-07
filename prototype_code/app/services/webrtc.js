@@ -112,6 +112,17 @@ function createPeer(peerId, isInitiator) {
 
   pc.onconnectionstatechange = () => {
     console.log(`🔗 [${peerId}]`, pc.connectionState);
+    if (["failed", "disconnected", "closed"].includes(pc.connectionState)) {
+      // Memory cleanup for lower-end devices
+      console.log(`🗑️ Cleaning up dropped peer: ${peerId}`);
+      if (dataChannels[peerId]) {
+        dataChannels[peerId].close();
+        delete dataChannels[peerId];
+      }
+      pc.close();
+      delete peerConnections[peerId];
+      allPeers = allPeers.filter(p => p !== peerId);
+    }
   };
 
   pc.onicecandidate = (event) => {
@@ -188,9 +199,10 @@ export const startCall = async () => {
 
 // 📤 Send
 export const sendMessage = (msg) => {
-  Object.values(dataChannels).forEach((channel) => {
+  for (const peerId in dataChannels) {
+    const channel = dataChannels[peerId];
     if (channel.readyState === "open") {
       channel.send(msg);
     }
-  });
+  }
 };
