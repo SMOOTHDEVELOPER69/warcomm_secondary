@@ -12,7 +12,7 @@ export default function Security() {
            Zero-Trust Encryption
         </h2>
         <p className="text-xl text-textMuted text-center max-w-3xl mx-auto mb-20 font-light">
-           The most hostile environments demand the highest grade of security. Privacy by design, end-to-end.
+           The most hostile environments demand the highest grade of security. Privacy by design, end-to-end, utilizing battle-tested algorithms like libsodium and NaCl.
         </p>
 
         {/* Interactive 3D Tunnel visual */}

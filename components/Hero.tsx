@@ -61,9 +61,9 @@ export default function Hero() {
           className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase mb-6 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] glitch-text"
           data-text="Stay Connected"
         >
-          Stay Connected <br />
+          Phones themselves become <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary filter drop-shadow-[0_0_20px_rgba(0,229,255,0.5)]">
-            When Networks Collapse.
+            the network.
           </span>
         </motion.h1>
 
@@ -73,7 +73,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-xl md:text-2xl text-gray-400 max-w-3xl mb-12 font-light tracking-wide leading-relaxed"
         >
-          Decentralized communication for civilians in war zones, disaster areas, and internet shutdowns.
+          A Decentralized Communication System for Internet Blackouts. Instead of relying on telecom infrastructure, devices create their own encrypted mesh network.
         </motion.p>
 
         <motion.div 

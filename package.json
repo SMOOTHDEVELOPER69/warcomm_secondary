@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup:prototype": "cd prototype_code && npm install",
+    "run:prototype-ws": "cd prototype_code && node server.js",
+    "run:prototype-client": "cd prototype_code && npx next dev -p 3001",
+    "start:local": "npm run setup:prototype && concurrently \"npm run dev\" \"npm run run:prototype-ws\" \"npm run run:prototype-client\""
   },
   "dependencies": {
     "autoprefixer": "^10.4.27",
@@ -20,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.2.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",

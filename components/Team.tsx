@@ -19,7 +19,7 @@ export default function Team() {
 
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
         <h2 className="text-4xl md:text-5xl font-black uppercase tracking-widest text-white mb-2 pb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] text-center border-b border-primary/20">
-            The Hackers Behind WarComm
+            The Hackers Behind ResilienceNet
         </h2>
         <p className="text-secondary tracking-[0.2em] uppercase text-sm mb-20 drop-shadow-[0_0_10px_#b400ff]">
             Decentralized Engineering Team

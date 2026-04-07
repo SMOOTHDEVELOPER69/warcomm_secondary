@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const benefits = [
   { title: "Stay Connected in Crises", desc: "No central towers? Direct device-to-device tunneling ensures communication never drops." },
-  { title: "Decentralized Resilience", desc: "Auto-healing algorithms bypass offline nodes in milliseconds." },
+  { title: "Decentralized Resilience", desc: "Auto-healing Flood Routing and Delay-Tolerant Networking (DTN) algorithms bypass offline nodes in milliseconds." },
   { title: "Military-Grade Encryption", desc: "X25519 elliptic curve keys lock payloads before packets leave your hardware." },
   { title: "Community Infrastructure", desc: "The software-defined grid gets faster and more redundant with every new user." }
 ];

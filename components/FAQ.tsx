@@ -5,7 +5,7 @@ import { Terminal, Database, Shield } from 'lucide-react';
 
 const faqs = [
   { id: 1, icon: <Terminal size={24}/>, q: "How does peer-to-peer mesh work?", a: "Devices act as both clients and routers. When a packet is transmitted, it bounces between nearby smartphones using BLE and Wi-Fi Direct until it finds the optimal path to the recipient." },
-  { id: 2, icon: <Database size={24}/>, q: "What is device discovery?", a: "A background protocol that constantly listens for WarComm handshakes. It creates dynamic routing tables without needing a central server or IP address architecture." },
+  { id: 2, icon: <Database size={24}/>, q: "What is device discovery?", a: "A background protocol that constantly listens for ResilienceNet handshakes. It creates dynamic routing tables without needing a central server or IP address architecture." },
   { id: 3, icon: <Shield size={24}/>, q: "How do Gateways function?", a: "If any node in the mesh achieves internet access (via Starlink, cellular, or Wi-Fi), it broadcasts a 'Gateway' status. The mesh then funnels long-distance encrypted packets through that node." }
 ];
 

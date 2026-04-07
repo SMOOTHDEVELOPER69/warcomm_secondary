@@ -7,7 +7,7 @@ const timeline = [
   { phase: "Phase 2: Protocol Design", date: "Saturday 2 AM", desc: "Engineered Vector Routing algorithm to bypass failing nodes." },
   { phase: "Phase 3: Prototype", date: "Saturday 3 PM", desc: "First successful multi-hop message transmitted via BLE between 3 devices." },
   { phase: "Phase 4: Optimization", date: "Sunday 4 AM", desc: "Integrated X25519 Encryption and completed the interactive web dashboard." },
-  { phase: "Phase 5: Deployment", date: "Sunday 10 AM", desc: "Final codebase merged. WarComm goes live." }
+  { phase: "Phase 5: Deployment", date: "Sunday 10 AM", desc: "Final codebase merged. ResilienceNet goes live." }
 ];
 
 export default function Timeline() {

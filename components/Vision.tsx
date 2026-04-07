@@ -34,7 +34,7 @@ export default function Vision() {
             transition={{ delay: 0.1 }}
             className="text-xl text-gray-300 font-light leading-relaxed mb-12 shadow-black drop-shadow-md"
          >
-            WarComm is not limited by physical infrastructure. The network mathematically strengthens as more nodes join. Our vision is an inter-country mesh grid, completely decentralized, powering millions of discrete connections per second.
+            ResilienceNet is not limited by physical infrastructure. The network mathematically strengthens as more nodes join. Our vision is an inter-country mesh grid, completely decentralized, powering millions of discrete connections per second.
          </motion.p>
       </div>
     </section>

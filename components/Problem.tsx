@@ -17,13 +17,13 @@ export default function Problem() {
           className="max-w-xl"
         >
           <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            A Disconnected World.
+            The Core Problem
           </h2>
           <div className="w-16 h-1 bg-red-500 mb-8 shadow-[0_0_15px_#ef4444]"></div>
-          <p className="text-2xl text-gray-400 font-light leading-relaxed">
-            During conflicts or massive natural disasters, centralized internet and cellular networks fail instantly. 
+          <p className="text-xl text-gray-400 font-light leading-relaxed">
+            During wars, disasters, or government shutdowns, internet infrastructure often stops working. Cell towers are destroyed, power grids fail, or governments unilaterally shut down ISPs.
             <br/><br/>
-            This leaves civilians dangerously cut off from the rest of the world.
+            Whether it's the Ukraine war, Iran internet shutdowns, Myanmar protests, or massive earthquake zones, the conventional network (Phone → Cell tower → ISP → Internet) disappears. People cannot call for help, coordinate evacuations, or share evidence with the outside world.
           </p>
         </motion.div>
 

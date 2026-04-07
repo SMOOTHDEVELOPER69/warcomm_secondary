@@ -11,9 +11,12 @@ export default function HowItWorks() {
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(0,229,255,0.05)_0%,transparent_100%)]"></div>
       
       <div className="max-w-7xl mx-auto flex flex-col items-center z-10 relative">
-        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-widest mb-20 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-          Decentralized Routing
+        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-widest mb-10 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+          Multi-Hop Communication
         </h2>
+        <p className="text-xl text-center text-textMuted max-w-3xl mb-16 font-light">
+           In a regular network, you communicate via a centralized cell tower. In ResilienceNet, messages hop across devices: <strong>Phone A → Phone B → Phone C → Phone D</strong>.
+        </p>
 
         {/* Cinematic Path Visualizer */}
         <div className="relative w-full h-[600px] flex items-center justify-center transform-style-3d rotate-x-[45deg] scale-110 mb-20">
@@ -41,6 +44,21 @@ export default function HowItWorks() {
                 {/* Dynamic Connection Beams */}
                 <div className="absolute top-[20%] left-[30%] w-[25%] h-1 bg-gradient-to-r from-secondary to-primary rotate-[30deg] shadow-[0_0_15px_#00e5ff]"></div>
                 <div className="absolute bottom-[20%] right-[30%] w-[35%] h-1 bg-gradient-to-r from-primary to-transparent -rotate-[15deg] shadow-[0_0_15px_#00e5ff]"></div>
+            </div>
+        </div>
+
+        <div className="mt-10 max-w-4xl opacity-80 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="glass-panel p-6 border-l-2 border-primary rounded-xl">
+               <h3 className="text-lg font-bold text-white mb-2 uppercase">1. Message Stored</h3>
+               <p className="text-sm text-textMuted leading-relaxed">The user sends a message. It is stored locally waiting for a nearby peer using Opportunistic Networking (DTN).</p>
+            </div>
+            <div className="glass-panel p-6 border-l-2 border-secondary rounded-xl">
+               <h3 className="text-lg font-bold text-white mb-2 uppercase">2. Message Relayed</h3>
+               <p className="text-sm text-textMuted leading-relaxed">The device encounters another node briefly. It forwards the message via Bluetooth or Wi-Fi Direct automatically.</p>
+            </div>
+            <div className="glass-panel p-6 border-l-2 border-white rounded-xl">
+               <h3 className="text-lg font-bold text-white mb-2 uppercase">3. Gateway Reached</h3>
+               <p className="text-sm text-textMuted leading-relaxed">The relayed message eventually reaches a Gateway Node with global internet access and is broadcast to the world.</p>
             </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-6 relative z-10">
         
         <div className="flex flex-col items-center gap-2">
-            <span className="font-black tracking-[0.2em] uppercase text-3xl drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">WarComm<span className="text-primary glow-pulse">_</span></span>
+            <span className="font-black tracking-[0.2em] uppercase text-3xl drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">ResilienceNet<span className="text-primary glow-pulse">_</span></span>
             <span className="text-xs text-secondary font-bold tracking-widest uppercase mb-4">System Operational</span>
         </div>
 
