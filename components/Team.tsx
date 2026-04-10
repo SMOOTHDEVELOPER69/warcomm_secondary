@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { Github } from 'lucide-react';
 
 const teamMembers = [
-  { name: "ARHAM KHAN", role: "WEBSITE DESIGNER", github: "https://github.com/SMOOTHDEVELOPER69", bio: "Led the core UI architecture, defining the cinematic, high-performance holographic visual language used across the application." },
-  { name: "PRANJAL KUMAR", role: "P2P Systems Engineer", github: "https://github.com/", bio: "Architected the low-level device discovery protocols and Bluetooth Low Energy handshakes for the mesh framework." },
-  { name: "NIHAL KUMAR", role: "Backend Architect", github: "https://github.com/nihal-kumar01", bio: "Developed the Gateway Node mechanics, ensuring packets securely bridge from the mesh local-net out to the global internet." },
-  { name: "GAURAV BANSAL", role: "Cryptography Lead", github: "https://github.com/", bio: "Implemented end-to-end X25519 elliptic curve encryption so data cannot be intercepted by hostile relay nodes." }
+  { name: "ARHAM KHAN", role: "Frontend Developer", github: "https://github.com/SMOOTHDEVELOPER69", bio: "Engineered the cutting-edge holographic UI and cinematic user experience, bringing the immersive dark-mode aesthetic to life." },
+  { name: "PRANJAL KUMAR", role: "Backend & Android Developer", github: "https://github.com/euphoric-habromaniac", bio: "Forged the robust backend infrastructure and native Android ecosystem, ensuring flawless cross-device communication." },
+  { name: "NIHAL KUMAR", role: "P2P Systems Developer", github: "https://github.com/nihal-kumar01", bio: "Architected the decentralized peer-to-peer communication framework, enabling devices to instantly construct a resilient mesh network." },
+  { name: "GAURAV BANSAL", role: "QA & Reliability Developer", github: "https://github.com/GauravBansal2006", bio: "Battle-tested the platform through rigorous product testing, certifying the software against extreme edge cases for mission-critical stability." }
 ];
 
 export default function Team() {

@@ -39,7 +39,7 @@ export default function Demo() {
 
            <div className="absolute inset-0 bg-background/80 flex flex-col items-center justify-center transition-all duration-300 group-hover:bg-background/40">
               <a 
-                href="http://localhost:3001" 
+                href="https://mesh-connect-jade.vercel.app/chat" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hologram-btn px-12 py-6 text-xl font-black"

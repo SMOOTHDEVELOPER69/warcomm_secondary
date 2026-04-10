@@ -33,7 +33,7 @@ export default function RootLayout({
                 <a href="#timeline" className="hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">Timeline</a>
                 <a href="#team" className="hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">Team</a>
             </div>
-            <a href="http://localhost:3001" target="_blank" rel="noopener noreferrer" className="hologram-btn px-6 py-2.5 rounded-none font-bold text-xs">
+            <a href="https://mesh-connect-jade.vercel.app/chat" target="_blank" rel="noopener noreferrer" className="hologram-btn px-6 py-2.5 rounded-none font-bold text-xs">
                 Launch System
             </a>
         </nav>

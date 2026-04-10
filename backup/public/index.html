@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesh Communication Engine</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mesh-background">
+        <div class="mesh-glow mesh-glow-1"></div>
+        <div class="mesh-glow mesh-glow-2"></div>
+    </div>
+    
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar glass-panel">
+            <div class="brand">
+                <i class="fa-solid fa-network-wired logo-icon"></i>
+                <h2>MeshNet</h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item active" data-target="dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-target="messaging">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Messaging</span>
+                </li>
+                <li class="nav-item" data-target="network">
+                    <i class="fa-solid fa-project-diagram"></i>
+                    <span>Network View</span>
+                </li>
+                <li class="nav-item" data-target="gateway">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Gateway Panel</span>
+                </li>
+            </ul>
+
+            <div class="user-status">
+                <div class="status-indicator online"></div>
+                <span>Node Active</span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="header-actions">
+                    <div class="gateway-indicator glass-pill" id="global-gateway-status">
+                        <i class="fa-solid fa-wifi"></i>
+                        <span>Offline</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Screens Containers -->
+            <div class="screens-container">
+                
+                <!-- Dashboard Screen -->
+                <section id="dashboard" class="screen active">
+                    <!-- Cards will be injected by JS -->
+                    <div class="dashboard-grid">
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+                            <div class="stat-details">
+                                <h3>Nearby Devices</h3>
+                                <p id="dash-nearby-count">0</p>
+                            </div>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-link"></i></div>
+                            <div class="stat-details">
+                                <h3>Active Connections</h3>
+                                <p id="dash-active-count">0</p>
+                            </div>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="stat-details">
+                                <h3>Network Health</h3>
+                                <p id="dash-health">Stable</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-lists">
+                        <div class="glass-card list-card">
+                            <h3>Nearby Devices</h3>
+                            <ul id="nearby-devices-list" class="device-list">
+                                <!-- Devices injected here -->
+                            </ul>
+                        </div>
+                        <div class="glass-card list-card">
+                            <h3>Recent Activity</h3>
+                            <ul id="recent-activity-list" class="activity-list">
+                                <!-- Activity injected here -->
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Messaging Screen -->
+                <section id="messaging" class="screen">
+                    <div class="messaging-container glass-card">
+                        <div class="message-sidebar">
+                            <button class="btn btn-primary w-100" id="btn-broadcast"><i class="fa-solid fa-bullhorn"></i> Broadcast</button>
+                            <h4 class="mt-2 text-muted">Nodes</h4>
+                            <ul id="chat-nodes-list" class="chat-list">
+                                <!-- Chat nodes -->
+                            </ul>
+                        </div>
+                        <div class="chat-area">
+                            <div class="chat-header">
+                                <h3 id="chat-current-target">Select a node</h3>
+                                <span class="encryption-badge"><i class="fa-solid fa-lock"></i> E2E Encrypted</span>
+                            </div>
+                            <div class="chat-messages" id="chat-messages-container">
+                                <!-- Messages injected here -->
+                            </div>
+                            <div class="chat-input-area">
+                                <div class="priority-toggle">
+                                    <label>Priority:</label>
+                                    <select id="msg-priority" class="glass-select">
+                                        <option value="normal">Normal</option>
+                                        <option value="emergency">Emergency</option>
+                                    </select>
+                                </div>
+                                <input type="text" id="chat-input" class="glass-input" placeholder="Type an encrypted message...">
+                                <button id="chat-send" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Network View Screen -->
+                <section id="network" class="screen">
+                    <div class="glass-card network-card">
+                        <div class="network-header">
+                            <h3>Live Routing Map</h3>
+                            <div class="network-legend">
+                                <span><div class="dot node-dot"></div> Node</span>
+                                <span><div class="dot gateway-dot"></div> Gateway</span>
+                                <span><div class="line msg-line"></div> Active Path</span>
+                            </div>
+                        </div>
+                        <div class="canvas-container" id="network-canvas-container">
+                            <canvas id="network-canvas"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gateway Panel Screen -->
+                <section id="gateway" class="screen">
+                    <div class="gateway-container">
+                        <div class="glass-card gateway-controls">
+                            <h3>Internet Bridge Settings</h3>
+                            <p class="text-muted">Allow this device to act as an exit node for the mesh network.</p>
+                            
+                            <div class="toggle-container">
+                                <span class="toggle-label">Enable Gateway Mode</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="gateway-toggle">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="gateway-status-panel mt-2">
+                                <h4>Status</h4>
+                                <div class="status-row">
+                                    <span>Internet Connection:</span>
+                                    <span id="gtw-internet-status" class="status-offline">Not Available</span>
+                                </div>
+                                <div class="status-row mt-1">
+                                    <span>Messages Bridged:</span>
+                                    <span id="gtw-messages-count">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card gateway-logs">
+                            <h3>Forwarding Logs</h3>
+                            <div class="log-terminal" id="gateway-logs">
+                                <!-- Logs injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
